@@ -1,21 +1,5 @@
-```txt
-npm install
-npm run dev
-```
+create an db (aiven, neondb)
+IMP -> paste your main aiven/neondb/local db service URI inside .env file
 
-```txt
-npm run deploy
-```
-
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+create connectionpool if you want to connect that db with your cloudflare workers
+IMP -> paste your connection pool URI inside wrangler.jsonc var
